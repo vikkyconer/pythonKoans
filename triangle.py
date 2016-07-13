@@ -19,6 +19,10 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
+    if a <= 0 or b <= 0 or c <= 0:
+        raise TriangleError(AttributeError('Triangle cannot have side zero or negative'))
+    if a + b < c or a + c < b:
+        raise TriangleError(AttributeError('Not a valid Triangle'))
     if a == b == c:
         return 'equilateral'
     if (a == b and b != c) or (a != b and b == c) or (a == c and a != b):
